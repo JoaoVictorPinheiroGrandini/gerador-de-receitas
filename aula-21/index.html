@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var receita = {
+        nome: "",
+        ingredientes: [],
+        quantidade: [],
+        preparo: "",
+      };
+      window.alert("Bem vindo!!!");
+      receita.nome = window.prompt("Qual é o nome da receita?", "");
+      function perguntarSobreAReceita(receita) {
+        var mensagem = false;
+        var ingrediente;
+        var quantidade;
+        while (mensagem == false) {
+          ingrediente = window.prompt("Digite o nome de um ingrediente : ", "");
+          quantidade = window.prompt(
+            "Digite a quantidade desse ingrediente :",
+            ""
+          );
+          receita.ingredientes.push(ingrediente);
+          receita.quantidade.push(quantidade);
+          mensagem = window.confirm("Acabaram os ingredientes?");
+        }
+      }
+      perguntarSobreAReceita(receita);
+      receita.preparo = "";
+    </script>
+  </body>
+</html>
